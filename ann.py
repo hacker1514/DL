@@ -69,7 +69,7 @@ class Network :
         output = self.outputs[-1]
         dz = []
         for i in range(len(output)):
-            dz.append(output[i] - y)
+            dz.append(output[i] - y[i])
         for i in reversed(range(len(self.layers))):
             dz = self.layers[i].backward(dz)
     def update(self,lr):
